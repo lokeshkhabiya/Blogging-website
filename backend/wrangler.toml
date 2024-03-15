@@ -2,8 +2,8 @@ name = "blog"
 compatibility_date = "2023-12-01"
 
 [vars]
-DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiMzIzMDdlNzctMDcyNi00ODIyLWJiMTQtMTMyYTczNGU4ZjYzIiwidGVuYW50X2lkIjoiN2FkMGE1YjE0ZDQ1NWFjYjkwNDBmOTgzMWQ5MWQ3YTVlYzA1MmZiMTA4ODI5ODQ0NTBhMTEyNjA1YTUwNzkxNCIsImludGVybmFsX3NlY3JldCI6ImJhOGU3NzcwLTEwZGMtNDZiZi1hMGU2LTgwMjljZDE4MDlmZCJ9.mdbY-vIct0q7ut8lc9MHiOSd6L9zTzm5VRl4aJmF7RI"
-JWT_SECRET = "Lokeshkhabiyajwtfuckingsecret"
+DATABASE_URL=""
+JWT_SECRET = ""
 
 # [[kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
