@@ -27,12 +27,12 @@ const Auth = ({type} : {type: "signup" | "signin"}) => {
                     </div>
                 </div>
                 <div className="pt-4">
-                    <LabelledInput label="Name" placeholder="lokesh khabiya" onChange={(e) => {
+                    {type === "signup" ? <LabelledInput label="Name" placeholder="lokesh khabiya" onChange={(e) => {
                         setPostInputs({
                             ...postInputs,
                             name: e.target.value
                         })
-                    }}/> 
+                    }}/> : null }
                     <LabelledInput label="Email" placeholder="lokeshkhabiya@gmail.com" onChange={(e) => {
                         setPostInputs({
                             ...postInputs,
