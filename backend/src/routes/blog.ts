@@ -14,6 +14,7 @@ export const blogRouter = new Hono<{
     }
 }>();
 
+// auth middle ware
 blogRouter.use("/*", async (c, next) => {
     const authHeader = c.req.header("authorization") || "";
     try {
