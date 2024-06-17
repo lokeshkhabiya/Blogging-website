@@ -1,27 +1,55 @@
+import { useEffect } from "react"
 import { Appbar } from "../components/Appbar"
-import TextEditorr from "../components/TextEditorr"
+import EditorJS, { OutputData } from "@editorjs/editorjs"
+import { tools } from "../utils/Tools"
 
-export const Publish = () => {
+
+const Publish = () => {
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const editor = new EditorJS({
+      holder: 'texteditor',
+      data: "" as unknown as OutputData,
+      tools: tools,
+      placeholder: "let's write an awesome blog...",
+    })
+  }, [])
+
+  const handleTitleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.keyCode == 13) e.preventDefault() 
+  }
+
+  const handleTitleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const input = e.target;
+    
+    input.style.height = "auto";
+    input.style.height = input.scrollHeight + "px";
+  }
+
   return (
-    <div>
+    <>
       <Appbar /> 
-      <div className="flex justify-center">
-        <div className="max-w-screen-lg w-full">
-          <label className="block mt-10 mb-2 text-sm font-medium text-gray-900">Title</label>
-          <input type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Title..." />
-          <TextEditor />
-          <button type="button" className="mt-4 mr-4 text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2">Publish</button>
+      <div className="flex flex-col  justify-center items-center m-auto p-6 max-w-screen-md">
+        <textarea name="" id=""
+          placeholder="Blog title"
+          className="text-4xl mt-10 font-medium w-full h-20 outline-none resize-none leading-tight placeholder:opacity-40"
+          onKeyDown={handleTitleKeyDown}
+          onChange={handleTitleChange}
+        ></textarea>
+
+        <hr className="flex w-full my-4"/>
+        
+        <div
+          id="texteditor"
+          className="flex flex-col w-full"
+        >
+
         </div>
+
       </div>
-    </div>
+    </>
   )
 }
 
-export function TextEditor() {
-  return <div>
-    <label className="block mt-4 mb-2 text-sm font-medium text-gray-900">Content</label>
-    <div className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-      <TextEditorr /> 
-    </div>
-  </div>
-}
+export default Publish

@@ -20,6 +20,17 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": [
+    "src",
+    // "code.editor.d.ts",
+    // "embed.editor.d.ts",
+    // "header.editor.d.ts",
+    // "image.editor.d.ts",
+    // "list.editor.d.ts",
+    // "inlineCode.editor.d.ts",
+    // "code.editor.d.ts",
+    // "marker.editor.d.ts",
+    // "quote.editor.d.ts",
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

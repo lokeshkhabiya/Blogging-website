@@ -24,8 +24,6 @@ const Auth = ({type} : {type: "signup" | "signin"}) => {
             console.log(error);
 
         }
-        
-
     }
 
   return (
